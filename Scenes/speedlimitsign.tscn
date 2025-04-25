@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://vhwja3lwhn7v"]
+
+[ext_resource type="Script" path="res://Scripts/speedlimitsign.gd" id="1_7pkg4"]
+[ext_resource type="PackedScene" uid="uid://cjifnan2von3p" path="res://assets/Models/stop.glb" id="2_f8n0a"]
+[ext_resource type="PackedScene" uid="uid://bd1v00exyi8ot" path="res://assets/Models/speedlimit.glb" id="3_2icup"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iinl2"]
+size = Vector3(52.5583, 6, 8)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j7cgo"]
+height = 6.50163
+
+[node name="SpeedLimitArea" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00264359, 0, -0.0480576)
+script = ExtResource("1_7pkg4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["StopSigns"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9231, 2.5, 3.5)
+shape = SubResource("BoxShape3D_iinl2")
+
+[node name="Node3D" parent="." groups=["StopSigns"] instance=ExtResource("2_f8n0a")]
+transform = Transform3D(-6.78533e-08, 0, -0.532155, 0, 0.532155, 0, 1.5523, 0, -2.32612e-08, -3, -1.34845, -2)
+
+[node name="Label3D" type="Label3D" parent="Node3D"]
+transform = Transform3D(-5.05274, 1.3189e-06, -0.0240634, 4.41725e-07, 15.0864, 2.10369e-09, -0.117045, -1.68169e-13, 1.0388, 0.000510693, 10.5781, -0.398782)
+pixel_size = 0.0065
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.733005, 0.733005, 0.733005, 1)
+text = "XX"
+font_size = 18
+outline_size = 0
+
+[node name="speedlimit" parent="." instance=ExtResource("3_2icup")]
+transform = Transform3D(-8.46406e-08, 0, -1.93635, 0, 1.93635, 0, 1.93635, 0, -8.46406e-08, -2.98602, -0.244942, -2.01264)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["StopSigns"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.15599, -2.02132)
+shape = SubResource("CylinderShape3D_j7cgo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

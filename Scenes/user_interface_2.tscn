@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ygn4at51tw4j"]
+
+[ext_resource type="Script" path="res://Scripts/user_interface_2.gd" id="1_g57kd"]
+[ext_resource type="Texture2D" uid="uid://w1kqkqj7ri7b" path="res://assets/Images/Instructor_Check_List_Screen.jpg" id="2_vpcmu"]
+[ext_resource type="FontFile" uid="uid://cxi2psa1opte" path="res://assets/Font/ARCADE_N.TTF" id="3_4andn"]
+[ext_resource type="AudioStream" uid="uid://7y23n038i34p" path="res://assets/Music/Steps.mp3" id="4_jdt2j"]
+
+[node name="User Interface 2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g57kd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_vpcmu")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Next Button 2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 547.0
+offset_right = 1120.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("3_4andn")
+theme_override_font_sizes/font_size = 25
+text = "NEXT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jdt2j")
+autoplay = true
+
+[connection signal="pressed" from="Next Button 2" to="." method="_on_next_button_2_pressed"]

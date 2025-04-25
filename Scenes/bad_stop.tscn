@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bexxmtbx1afeb"]
+
+[ext_resource type="Script" path="res://Scripts/bad_stop.gd" id="1_vtpbp"]
+[ext_resource type="Texture2D" uid="uid://b7c0ltaur5r8o" path="res://assets/Images/bad stop instructor.jpg" id="2_rpovl"]
+[ext_resource type="FontFile" uid="uid://cxi2psa1opte" path="res://assets/Font/ARCADE_N.TTF" id="3_n4ftx"]
+[ext_resource type="AudioStream" uid="uid://i1fd6uasry8c" path="res://assets/Music/bad_stop.mp3" id="4_b6cjw"]
+[ext_resource type="AudioStream" uid="uid://cxglesw21xccw" path="res://assets/Music/minuspoint.wav" id="5_a0jc0"]
+
+[node name="Bad_Stop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vtpbp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.888916
+offset_right = 1.11108
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rpovl")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1007.0
+offset_top = 542.0
+offset_right = 1121.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("3_n4ftx")
+theme_override_font_sizes/font_size = 25
+text = "OK"
+
+[node name="Instructor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_b6cjw")
+
+[node name="BadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_a0jc0")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

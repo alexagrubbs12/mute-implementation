@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1geubq8ce68q"]
+
+[ext_resource type="Script" path="res://Scripts/bad_oncoming_traffic.gd" id="1_1t3xk"]
+[ext_resource type="Texture2D" uid="uid://btv6gbqpa7tlv" path="res://assets/Images/bad oncoming traffic.jpg" id="2_e6afm"]
+[ext_resource type="FontFile" uid="uid://cxi2psa1opte" path="res://assets/Font/ARCADE_N.TTF" id="3_ltg6h"]
+[ext_resource type="AudioStream" uid="uid://bo5c3k0htcvu0" path="res://assets/Music/bad_oncoming_traffic.mp3" id="4_gphmn"]
+[ext_resource type="AudioStream" uid="uid://cxglesw21xccw" path="res://assets/Music/minuspoint.wav" id="5_m0xr7"]
+
+[node name="Bad_Oncoming_Traffic" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1t3xk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_e6afm")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1017.0
+offset_top = 541.0
+offset_right = 1118.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("3_ltg6h")
+theme_override_font_sizes/font_size = 25
+text = "OK"
+
+[node name="Instructor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gphmn")
+
+[node name="BadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m0xr7")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx2phkbiucpns"]
+
+[ext_resource type="Script" path="res://Scripts/bad_buildings_and_trees.gd" id="1_wrrrr"]
+[ext_resource type="Texture2D" uid="uid://c56h7qsr17hnn" path="res://assets/Images/bad building and trees.jpg" id="2_qs1ws"]
+[ext_resource type="FontFile" uid="uid://cxi2psa1opte" path="res://assets/Font/ARCADE_N.TTF" id="3_jb0ro"]
+[ext_resource type="AudioStream" uid="uid://dg75o3mv4cav1" path="res://assets/Music/bad_buildings_and_trees.mp3" id="4_3pp06"]
+[ext_resource type="AudioStream" uid="uid://cxglesw21xccw" path="res://assets/Music/minuspoint.wav" id="5_astoh"]
+
+[node name="Bad_Buildings_And_Trees" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrrrr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_qs1ws")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1012.0
+offset_top = 543.0
+offset_right = 1117.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("3_jb0ro")
+theme_override_font_sizes/font_size = 25
+text = "OK"
+
+[node name="Instructor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3pp06")
+
+[node name="BadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_astoh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

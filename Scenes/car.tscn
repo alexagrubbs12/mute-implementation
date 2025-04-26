@@ -141,26 +141,24 @@ offset_bottom = 87.0
 
 [node name="ColorRect" type="ColorRect" parent="UI/EndPopup"]
 layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -554.0
-offset_top = -302.0
-offset_right = 552.0
-offset_bottom = 306.0
+anchor_left = -13.85
+anchor_top = -3.47126
+anchor_right = 14.8
+anchor_bottom = 4.51724
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.337255)
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="UI/EndPopup"]
 layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -448.0
-offset_top = -253.0
-offset_right = 453.0
-offset_bottom = 255.0
+anchor_left = -11.2
+anchor_top = -2.90805
+anchor_right = 12.325
+anchor_bottom = 3.93103
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Message" type="RichTextLabel" parent="UI/EndPopup"]
 layout_mode = 2
@@ -179,18 +177,34 @@ autowrap_mode = 2
 
 [node name="CloseButton" type="Button" parent="UI/EndPopup"]
 layout_mode = 2
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 396.0
-offset_top = -241.0
-offset_right = 438.0
-offset_bottom = -204.0
+anchor_left = -5.725
+anchor_top = 3.36782
+anchor_right = -0.375
+anchor_bottom = 3.8046
 grow_horizontal = 0
 theme_override_colors/font_hover_pressed_color = Color(0.976471, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_fcxb8")
 theme_override_font_sizes/font_size = 21
-text = "X"
+text = "Play Again"
+metadata/_edit_use_anchors_ = true
+
+[node name="ReturnMenu" type="Button" parent="UI/EndPopup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.65
+anchor_top = 3.37931
+anchor_right = 7.475
+anchor_bottom = 3.81609
+grow_horizontal = 0
+theme_override_colors/font_hover_pressed_color = Color(0.976471, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_fcxb8")
+theme_override_font_sizes/font_size = 21
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="pluspoint" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_i70ph")
@@ -213,3 +227,4 @@ parameters/looping = true
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="pressed" from="UI/EndPopup/CloseButton" to="." method="close_end_popup"]
+[connection signal="pressed" from="UI/EndPopup/ReturnMenu" to="." method="_on_return_menu_pressed"]

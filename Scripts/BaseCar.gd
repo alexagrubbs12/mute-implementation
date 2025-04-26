@@ -11,7 +11,7 @@ class_name BaseCar
 @onready var score_label = %Hud/ScoreLabel    # On-screen score display
 @onready var bgm_player = %BGMPLayer
 @onready var end_music_player = %EndMusicPlayer
-
+@onready var speed_label = %Hud/speed 
 
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.6
@@ -192,6 +192,7 @@ func display_end_message():
 
 	feedback_label.visible = false
 	end_popup.visible = true
+	speed_label.visible = false
 	
 	bgm_player.stop()
 	if not Global.music_muted:
@@ -203,10 +204,9 @@ func display_end_message():
 	message_text += "🚦 Quick Traffic Tips for the Real World:\n\n\n\n\n"
 	message_text += "- 🛑 Stop signs = full stop, look around, go when safe.\n\n\n\n\n"
 	message_text += "- ⚠️ Speed limits = max speed allowed, not a suggestion!\n\n\n\n\n"
-	message_text += "Drive smart out there! Hit X to Play Again![/center]"
+	message_text += "Drive smart out there! Play Again![/center]"
 
 	end_message.parse_bbcode(message_text)
-
 
 # Close pop-up and restart game
 func close_end_popup():
@@ -214,6 +214,7 @@ func close_end_popup():
 	Engine.time_scale = 1  # Resume normal speed
 
 	end_popup.visible = false  # Hide pop-up
+	speed_label.visible = true
 	reset_score()
 	reset_car()  # Reset the car position
 	
@@ -225,3 +226,6 @@ func _on_oncoming_lane_entered(body: Node3D):
 	get_tree().change_scene_to_file("res://Scenes/bad_oncoming_traffic.tscn")
 	reset_score()
 	
+func _on_return_menu_pressed() -> void:
+	print("Next pressed")
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

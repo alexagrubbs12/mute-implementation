@@ -25,14 +25,15 @@ stretch_mode = 6
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-anchor_left = 0.878472
-anchor_top = 0.837963
-anchor_right = 0.969618
-anchor_bottom = 0.91821
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.773438
+anchor_top = 0.844136
+anchor_right = 0.971354
+anchor_bottom = 0.924383
 theme_override_fonts/font = ExtResource("3_jb0ro")
 theme_override_font_sizes/font_size = 25
-text = "OK"
+text = "try Again"
 metadata/_edit_use_anchors_ = true
 
 [node name="Instructor" type="AudioStreamPlayer" parent="."]
@@ -55,3 +56,4 @@ text = "Main Menu"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ReturnMenu" to="." method="_on_return_menu_pressed"]

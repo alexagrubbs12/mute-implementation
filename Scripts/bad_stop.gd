@@ -18,3 +18,6 @@ func _on_button_pressed() -> void:
 	print("Next pressed")
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	
+func _on_return_menu_pressed() -> void:
+	print("Next pressed")
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

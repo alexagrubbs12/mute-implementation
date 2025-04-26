@@ -25,14 +25,15 @@ stretch_mode = 6
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-anchor_left = 0.882813
-anchor_top = 0.834877
-anchor_right = 0.970486
-anchor_bottom = 0.91821
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.771701
+anchor_top = 0.83179
+anchor_right = 0.969618
+anchor_bottom = 0.915123
 theme_override_fonts/font = ExtResource("3_ltg6h")
 theme_override_font_sizes/font_size = 25
-text = "OK"
+text = "Try Again"
 metadata/_edit_use_anchors_ = true
 
 [node name="Instructor" type="AudioStreamPlayer" parent="."]
@@ -41,4 +42,18 @@ stream = ExtResource("4_gphmn")
 [node name="BadSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_m0xr7")
 
+[node name="ReturnMenu" type="Button" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0164931
+anchor_top = 0.0246914
+anchor_right = 0.21441
+anchor_bottom = 0.0987654
+theme_override_fonts/font = ExtResource("3_ltg6h")
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ReturnMenu" to="." method="_on_return_menu_pressed"]

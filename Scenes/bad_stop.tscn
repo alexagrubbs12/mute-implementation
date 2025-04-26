@@ -17,26 +17,27 @@ script = ExtResource("1_vtpbp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = -0.000771628
+anchor_right = 1.00096
 anchor_bottom = 1.0
-offset_left = -0.888916
-offset_right = 1.11108
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_rpovl")
 expand_mode = 3
 stretch_mode = 6
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1007.0
-offset_top = 542.0
-offset_right = 1121.0
-offset_bottom = 600.0
+anchor_left = 0.874132
+anchor_top = 0.83642
+anchor_right = 0.97309
+anchor_bottom = 0.925926
 theme_override_fonts/font = ExtResource("3_n4ftx")
 theme_override_font_sizes/font_size = 25
 text = "OK"
+metadata/_edit_use_anchors_ = true
 
 [node name="Instructor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_b6cjw")

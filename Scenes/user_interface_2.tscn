@@ -16,24 +16,40 @@ script = ExtResource("1_g57kd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource("2_vpcmu")
 expand_mode = 3
 stretch_mode = 6
+metadata/_edit_use_anchors_ = true
 
 [node name="Next Button 2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1011.0
-offset_top = 547.0
-offset_right = 1120.0
-offset_bottom = 592.0
+anchor_left = 0.877604
+anchor_top = 0.844136
+anchor_right = 0.972222
+anchor_bottom = 0.91358
 theme_override_fonts/font = ExtResource("3_4andn")
 theme_override_font_sizes/font_size = 25
 text = "NEXT"
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_jdt2j")
 autoplay = true
 
+[node name="ReturnMenu" type="Button" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0164931
+anchor_top = 0.0246914
+anchor_right = 0.21441
+anchor_bottom = 0.0987654
+theme_override_fonts/font = ExtResource("3_4andn")
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Next Button 2" to="." method="_on_next_button_2_pressed"]
+[connection signal="pressed" from="ReturnMenu" to="." method="_on_return_menu_pressed"]

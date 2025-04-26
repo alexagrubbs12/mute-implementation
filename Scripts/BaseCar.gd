@@ -27,7 +27,8 @@ var score: int = 0
 
 func _ready():
 	init_transform = transform
-	bgm_player.play()  # Save the starting position
+	if not Global.music_muted:
+		bgm_player.play()  # Save the starting position
 	# Debugging node existence
 	print("Looking for FeedbackLabel...")
 
@@ -193,7 +194,8 @@ func display_end_message():
 	end_popup.visible = true
 	
 	bgm_player.stop()
-	end_music_player.play()
+	if not Global.music_muted:
+		end_music_player.play()
 
 	end_message.clear()  # Clear any existing text
 
@@ -216,7 +218,8 @@ func close_end_popup():
 	reset_car()  # Reset the car position
 	
 	end_music_player.stop()
-	bgm_player.play()
+	if not Global.music_muted:
+		bgm_player.play()
 
 func _on_oncoming_lane_entered(body: Node3D):
 	get_tree().change_scene_to_file("res://Scenes/bad_oncoming_traffic.tscn")

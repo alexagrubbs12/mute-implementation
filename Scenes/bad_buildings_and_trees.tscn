@@ -17,26 +17,41 @@ script = ExtResource("1_wrrrr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource("2_qs1ws")
 expand_mode = 3
 stretch_mode = 6
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1012.0
-offset_top = 543.0
-offset_right = 1117.0
-offset_bottom = 595.0
+anchor_left = 0.878472
+anchor_top = 0.837963
+anchor_right = 0.969618
+anchor_bottom = 0.91821
 theme_override_fonts/font = ExtResource("3_jb0ro")
 theme_override_font_sizes/font_size = 25
 text = "OK"
+metadata/_edit_use_anchors_ = true
 
 [node name="Instructor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3pp06")
 
 [node name="BadSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_astoh")
+
+[node name="ReturnMenu" type="Button" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0164931
+anchor_top = 0.0246914
+anchor_right = 0.21441
+anchor_bottom = 0.0987654
+theme_override_fonts/font = ExtResource("3_jb0ro")
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
